@@ -1,0 +1,10 @@
+/*
+Theme Name:     Symfony
+Theme URI:      http://hypebeast.com/
+Description:    Child theme for Twenty Eleven
+Author:         Ka Yue Yeung
+Template:       twentyeleven
+Version:        0.0.0
+*/
+
+@import "../twentyeleven/style.css";
