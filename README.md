@@ -4,6 +4,23 @@ This theme shows how to use Nikolay's [wordpress-tests](https://github.com/nb/wo
 
 For more information, please also see [Unit Testing WordPress Plugins](http://stackoverflow.com/questions/9138215/unit-testing-wordpress-plugins).
 
+## Usage
+
+Simply run the `phpunit` command. An example output:
+
+```
+$ phpunit 
+PHPUnit 3.6.4 by Sebastian Bergmann.
+
+Configuration read from /Users/user/Sites/wordpress/wp-content/themes/twentytest/phpunit.xml
+
+.....
+
+Time: 0 seconds, Memory: 21.00Mb
+
+OK (5 tests, 10 assertions)
+```
+
 ## Install
 
 1. Create config file. Copy `vendors/wordpress-tests/unittests-config-sample.php` to `vendors/wordpress-tests/unittests-config.php`.
