@@ -23,12 +23,24 @@ OK (5 tests, 10 assertions)
 
 ## Install
 
-1. Create config file. Copy `vendors/wordpress-tests/unittests-config-sample.php` to `vendors/wordpress-tests/unittests-config.php`.
-2. Edit the config file. 
-3. Since the tests will be running on a separated Wordpress installation, please **use a new database, because all the data inside will be deleted** to create a clean environment .
-4. The test database's default theme is TwentyEleven, you will need to switch the theme to `twentytest` by updating the stylesheet option in the options table.
+1. Include [wordpress-tests](https://github.com/nb/wordpress-tests) through Git submodule. Run the following command to initialize submodule for the first time:
 
 	```
+	$ git submodule init
+	```
+
+2. Pull down / update the submodule:
+
+	```
+	$ git submodule update
+	```
+
+3. Create config file. Copy `vendors/wordpress-tests/unittests-config-sample.php` to `vendors/wordpress-tests/unittests-config.php`.
+4. Edit the config file. 
+5. Since the tests will be running on a separated Wordpress installation, please **use a new database, because all the data inside will be deleted** to create a clean environment .
+6. The test database's default theme is TwentyEleven, you will need to switch the theme to `twentytest` by updating the stylesheet option in the options table.
+
+	``` SQL
 	UPDATE `wp_options` SET `option_value` = 'twentytest' WHERE `option_name` = 'stylesheet';
 	```
 
