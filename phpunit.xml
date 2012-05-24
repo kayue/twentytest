@@ -11,6 +11,9 @@
          syntaxCheck="false"
          bootstrap="tests/bootstrap.php"
 >
+    <php>
+        
+    </php>
     <testsuites>
         <testsuite name="Theme's functions.php Test Suite">
             <directory>./tests/</directory>

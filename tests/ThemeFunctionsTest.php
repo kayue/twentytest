@@ -1,10 +1,7 @@
 <?php
 
-/**
- * functions.php Tests
- */
+class Theme_Functions_Test extends WordPress_TestCase {
 
-class FunctionsPHPTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 	}
