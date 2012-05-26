@@ -1,6 +1,6 @@
 <?php
 
-class WordPress_Functions_Test extends WpTestCase {
+class WordPressFunctionsTest extends WordPressTestCase {
 
 	public function testIsEmail() {
 		$this->assertEquals('nb@nikolay.com', is_email('nb@nikolay.com'));

@@ -1,6 +1,6 @@
 <?php
 
-class Theme_Functions_Test extends WpTestCase {
+class ThemeFunctionsTest extends WordPressTestCase {
 
 	public function setUp() {
 		parent::setUp();
