@@ -1,6 +1,6 @@
 <?php
 
-class WordPress_Functions_Test extends WordPress_TestCase {
+class WordPress_Functions_Test extends WpTestCase {
 
 	public function testIsEmail() {
 		$this->assertEquals('nb@nikolay.com', is_email('nb@nikolay.com'));
@@ -23,23 +23,27 @@ class WordPress_Functions_Test extends WordPress_TestCase {
 		global $wp_query;
 
 		$this->assertEmpty($wp_query->query_vars);
-		$this->query(get_permalink(1));
+		$this->request(get_permalink(1));
 		$this->assertEquals(1, get_the_id());
 		$this->assertTrue(is_single(), 'This is not a single post page.');
 		$this->assertTrue(have_posts());
 		$this->assertFalse(is_404());
 	}
 
+	/**
+     * @expectedException PHPUnit_Framework_Error_Notice
+     */
 	public function testTearDownQuery() {
 		global $wp_query;
 
 		$this->assertEmpty($wp_query->query_vars, '$wp_query->query_vars Should have been reset after each test.');
 		$this->assertFalse(is_404());
-		$this->assertNull(get_the_id());
+		
+		get_the_id(); // expected exception in here
 	}
 
 	public function test404() {
-		$this->query(site_url('?p=404'));
+		$this->request(site_url('?p=404'));
 		$this->assertTrue(is_404());
 	}
 }
